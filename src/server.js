@@ -24,6 +24,8 @@ import express from 'express'
 
 const app = (express.json());
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Users management API'
