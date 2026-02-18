@@ -22,6 +22,9 @@
 
 import express from 'express'
 import dotenv from 'dotenv';
+import userRoutes from './users/users.routes.js';
+
+dotenv.config();
 const app = express();
 
 app.use(express.json());
@@ -31,6 +34,8 @@ app.get('/', (req, res) => {
     message: 'Users management API'
 });
 });
+
+app.use('/users', userRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
